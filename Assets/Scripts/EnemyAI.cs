@@ -15,9 +15,8 @@ public class EnemyAI : MonoBehaviour
     private Vector3 lastTarget = new Vector3(0, 0, 0);
     public Vector3 lastPlayerTransform = new Vector3(0,0,0);
 
-
-
-
+    public Material[] colours;
+    public MeshRenderer mr;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +53,8 @@ public class EnemyAI : MonoBehaviour
         switch (enemyState)
         {
             case EnemyStates.Patrol:
+                //Sets the colour
+                mr.material = colours[0];
                 //Gets a random patrolPoint and sets the target
                 if (target == Vector3.zero)
                 {
@@ -76,8 +77,10 @@ public class EnemyAI : MonoBehaviour
                 }
                 break;
             case EnemyStates.Chase:
+                //Sets the colour
+                mr.material = colours[1];
                 //If enemy is out of range, switch to search state
-                if (Vector3.Distance(target, transform.position) > 50)
+                if (Vector3.Distance(target, transform.position) > 40)
                 {
                     target = Vector3.zero;
                     enemyState = EnemyStates.Search;
@@ -89,6 +92,8 @@ public class EnemyAI : MonoBehaviour
                 }
                 break;
             case EnemyStates.Search:
+                //Sets the colour
+                mr.material = colours[2];
                 if (Vector3.Distance(lastPlayerTransform, transform.position) < 3)
                 {
                     target = Vector3.zero;
@@ -97,6 +102,8 @@ public class EnemyAI : MonoBehaviour
 
                 break;
             case EnemyStates.Attack:
+                //Sets the colour
+                mr.material = colours[3];
                 if (Vector3.Distance(target, transform.position) > 1)
                 {
                     enemyState = EnemyStates.Chase;
