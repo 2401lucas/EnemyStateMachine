@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04e44a13c5ab994abc295b76ae411d4, type: 3}
+  m_Name: Attack Dog
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 0c739aa815fc0d34ea7538a72ff74dfe, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 523477e5c6c50dc44ba2b1edf8027844, type: 2}
+    trueState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
+    falseState: {fileID: 11400000, guid: e199216f44f358a43ada3dd639bcc5ff, type: 2}
+  sceneGizmoColor: {r: 1, g: 0.5779932, b: 0, a: 1}

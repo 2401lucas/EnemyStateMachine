@@ -12,16 +12,11 @@ public class AttackAction : Action
 
     private void Attack(StateController controller)
     {
-        RaycastHit hit;
-
-        Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyStats.attackRange, Color.red);
-
-        if (Physics.SphereCast(controller.eyes.position, controller.enemyStats.lookSphereCastRadius, controller.eyes.forward, out hit, controller.enemyStats.attackRange)
-            && hit.collider.CompareTag("Player"))
+        if (Vector3.Distance(controller.chaseTarget.position, controller.transform.position) < 3)
         {
             if (controller.CheckIfCountDownElapsed(controller.enemyStats.attackRate))
             {
-                //controller.tankShooting.Fire(controller.enemyStats.attackForce, controller.enemyStats.attackRate);
+                controller.chaseTarget.SendMessage("TakeDamage", controller.enemyStats.attackDamage);
             }
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/State")]
+[CreateAssetMenu(menuName = "EnemyStateMachine/State")]
 public class State : ScriptableObject
 {
 
@@ -31,13 +31,9 @@ public class State : ScriptableObject
             bool decisionSucceeded = transitions[i].decision.Decide(controller);
 
             if (decisionSucceeded)
-            {
                 controller.TransitionToState(transitions[i].trueState);
-            }
             else
-            {
                 controller.TransitionToState(transitions[i].falseState);
-            }
         }
     }
 

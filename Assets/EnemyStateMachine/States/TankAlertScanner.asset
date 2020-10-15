@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04e44a13c5ab994abc295b76ae411d4, type: 3}
+  m_Name: TankAlertScanner
+  m_EditorClassIdentifier: 
+  actions: []
+  transitions:
+  - decision: {fileID: 11400000, guid: c59822fe4c77a5d468837a71bd9eadc1, type: 2}
+    trueState: {fileID: 11400000, guid: 25d08b8b25fc4f04fabac5591cc95abe, type: 2}
+    falseState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
+  - decision: {fileID: 11400000, guid: 0178129125071484db3f6fd7d50091bf, type: 2}
+    trueState: {fileID: 11400000, guid: 2aae0387aa263e74ba46cc6506bdcd8d, type: 2}
+    falseState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
+  sceneGizmoColor: {r: 0.9481919, g: 1, b: 0, a: 1}

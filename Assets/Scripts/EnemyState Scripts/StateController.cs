@@ -25,14 +25,20 @@ public class StateController : MonoBehaviour
 
     void Awake()
     {
-        //tankShooting = GetComponent<Complete.TankShooting>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        SetupAI();
     }
 
-    public void SetupAI(bool aiActivationFromTankManager, List<Transform> wayPointsFromTankManager)
+    public void SetupAI(/*bool aiActivationFromGameManager, List<Transform> wayPointsFromGameManager*/)
     {
-        wayPointList = wayPointsFromTankManager;
-        aiActive = aiActivationFromTankManager;
+        GameObject[] go = GameObject.FindGameObjectsWithTag("PatrolPoint");
+        for (int i = 0; i < go.Length; i++)
+        {
+            wayPointList.Add(go[i].transform);
+
+        }
+        print("Waypoint list count" + wayPointList.Count);
+        aiActive = true; //aiActivationFromGameManager;
         if (aiActive)
         {
             navMeshAgent.enabled = true;

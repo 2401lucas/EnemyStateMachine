@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Actions/Patrol")]
+[CreateAssetMenu(menuName = "EnemyStateMachine/Actions/Patrol")]
 public class PatrolAction : Action
 {
     public override void Act(StateController controller)
@@ -13,11 +13,19 @@ public class PatrolAction : Action
     private void Patrol(StateController controller)
     {
         controller.navMeshAgent.destination = controller.wayPointList[controller.nextWayPoint].position;
-        controller.navMeshAgent.Resume();
+        controller.navMeshAgent.isStopped = false;
 
         if (controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending)
         {
-            controller.nextWayPoint = (controller.nextWayPoint + 1) % controller.wayPointList.Count;
+            while (true)
+            {
+                int temp = Random.Range(0, controller.wayPointList.Count);
+                if (temp != controller.nextWayPoint)
+                {
+                    controller.nextWayPoint = temp;
+                    break;
+                }
+            }
         }
     }
 }
