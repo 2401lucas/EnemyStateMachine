@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b04e44a13c5ab994abc295b76ae411d4, type: 3}
-  m_Name: Chase Tank
+  m_Name: Patrol Dog
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: 718531d43449bef42af3d6c6017ac8e8, type: 2}
-  - {fileID: 11400000, guid: 0c739aa815fc0d34ea7538a72ff74dfe, type: 2}
+  - {fileID: 11400000, guid: 1ec5008e7f47bd24c8b98308590fe443, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: 0178129125071484db3f6fd7d50091bf, type: 2}
-    trueState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
-    falseState: {fileID: 11400000, guid: 9aeb53051ba0b544595b3ffe02802a74, type: 2}
-  sceneGizmoColor: {r: 1, g: 0, b: 0, a: 1}
+    trueState: {fileID: 11400000, guid: 08658c364caf5494a9e4404f8e6286cb, type: 2}
+    falseState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
+  sceneGizmoColor: {r: 0.05378294, g: 1, b: 0, a: 1}

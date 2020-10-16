@@ -7,15 +7,15 @@ public class StateController : MonoBehaviour
 {
 
     public State currentState;
-    public EnemyStats enemyStats;
     public State remainState;
+    public EnemyStats enemyStats;
     //Create an Empty GameObject and position infront of Enemy for calculations
     public Transform eyes;
 
-
+    //Public variables that aren't needed in 
     [HideInInspector] public NavMeshAgent navMeshAgent;
-    [HideInInspector] public List<Transform> wayPointList;
-    [HideInInspector] public int nextWayPoint;
+    [HideInInspector] public List<Transform> patrolPointList;
+    [HideInInspector] public int nextPatrolPoint;
     [HideInInspector] public Transform chaseTarget;
     [HideInInspector] public float stateTimeElapsed;
 
@@ -33,19 +33,17 @@ public class StateController : MonoBehaviour
         GameObject[] go = GameObject.FindGameObjectsWithTag("PatrolPoint");
         for (int i = 0; i < go.Length; i++)
         {
-            wayPointList.Add(go[i].transform);
+            patrolPointList.Add(go[i].transform);
 
         }
-        print("Waypoint list count" + wayPointList.Count);
+        print("Enemy Patrol point count " + patrolPointList.Count);
         aiActive = true; //aiActivationFromGameManager;
         if (aiActive)
-        {
             navMeshAgent.enabled = true;
-        }
         else
-        {
             navMeshAgent.enabled = false;
-        }
+
+        nextPatrolPoint = Random.Range(0, patrolPointList.Count);
     }
 
     void Update()

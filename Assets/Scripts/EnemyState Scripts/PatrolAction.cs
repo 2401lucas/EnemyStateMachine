@@ -12,17 +12,17 @@ public class PatrolAction : Action
 
     private void Patrol(StateController controller)
     {
-        controller.navMeshAgent.destination = controller.wayPointList[controller.nextWayPoint].position;
+        controller.navMeshAgent.destination = controller.patrolPointList[controller.nextPatrolPoint].position;
         controller.navMeshAgent.isStopped = false;
 
         if (controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending)
         {
             while (true)
             {
-                int temp = Random.Range(0, controller.wayPointList.Count);
-                if (temp != controller.nextWayPoint)
+                int temp = Random.Range(0, controller.patrolPointList.Count);
+                if (temp != controller.nextPatrolPoint)
                 {
-                    controller.nextWayPoint = temp;
+                    controller.nextPatrolPoint = temp;
                     break;
                 }
             }

@@ -36,6 +36,4 @@ public class State : ScriptableObject
                 controller.TransitionToState(transitions[i].falseState);
         }
     }
-
-
 }

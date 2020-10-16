@@ -12,7 +12,7 @@ public class AttackAction : Action
 
     private void Attack(StateController controller)
     {
-        if (Vector3.Distance(controller.chaseTarget.position, controller.transform.position) < 3)
+        if (Vector3.Distance(controller.chaseTarget.position, controller.transform.position) < controller.enemyStats.attackRange)
         {
             if (controller.CheckIfCountDownElapsed(controller.enemyStats.attackRate))
             {
