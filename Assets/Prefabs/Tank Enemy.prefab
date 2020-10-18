@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3874454948331609933}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3874454948331609932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.68, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3874454948534700714}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3874454948534700718}
   - component: {fileID: 8589166812615965610}
   - component: {fileID: 3874454947606093755}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tank Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -139,10 +139,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 8
+  m_Speed: 8
+  m_Acceleration: 5
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 720
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -183,21 +183,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af4a856efd226e45898197a661f8e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: e199216f44f358a43ada3dd639bcc5ff, type: 2}
+  currentState: {fileID: 11400000, guid: 25d08b8b25fc4f04fabac5591cc95abe, type: 2}
+  remainState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
   enemyStats:
     moveSpeed: 5
-    lookRange: 10
-    lookSphereCastRadius: 5
-    attackRange: 2
+    lookRange: 50
+    lookSphereCastRadius: 1
+    areaSphereOverlapRadius: 20
+    attackRange: 50
     attackRate: 2
     attackForce: 2
     attackDamage: 2
-    searchDuration: 4
-    searchingTurnSpeed: 120
-  remainState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
+    searchDuration: 6
+    searchingTurnSpeed: 60
   eyes: {fileID: 3874454948331609933}
   navMeshAgent: {fileID: 0}
-  wayPointList: []
-  nextWayPoint: 0
+  patrolPointList: []
+  nextPatrolPoint: 0
   chaseTarget: {fileID: 0}
   stateTimeElapsed: 0

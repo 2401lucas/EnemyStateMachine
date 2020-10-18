@@ -19,38 +19,26 @@ public class StateController : MonoBehaviour
     [HideInInspector] public Transform chaseTarget;
     [HideInInspector] public float stateTimeElapsed;
 
-    private bool aiActive;
-
-
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        SetupAI();
+        SetupAI(); //Called from a GameManager or EnemyManager script
     }
 
-    public void SetupAI(/*bool aiActivationFromGameManager, List<Transform> wayPointsFromGameManager*/)
+    public void SetupAI(/*List<Transform> wayPointsFromGameManager*/)
     {
-        GameObject[] go = GameObject.FindGameObjectsWithTag("PatrolPoint");
+        GameObject[] go = GameObject.FindGameObjectsWithTag("PatrolPoint"); //Will get list from EnemyManager or GameManger
         for (int i = 0; i < go.Length; i++)
         {
             patrolPointList.Add(go[i].transform);
-
         }
         print("Enemy Patrol point count " + patrolPointList.Count);
-        aiActive = true; //aiActivationFromGameManager;
-        if (aiActive)
-            navMeshAgent.enabled = true;
-        else
-            navMeshAgent.enabled = false;
-
         nextPatrolPoint = Random.Range(0, patrolPointList.Count);
     }
 
     void Update()
     {
-        if (!aiActive)
-            return;
-        currentState.UpdateState(this);
+       currentState.UpdateState(this);
     }
 
     void OnDrawGizmos()
@@ -58,7 +46,7 @@ public class StateController : MonoBehaviour
         if (currentState != null && eyes != null)
         {
             Gizmos.color = currentState.sceneGizmoColor;
-            Gizmos.DrawWireSphere(eyes.position, enemyStats.lookSphereCastRadius);
+            Gizmos.DrawWireSphere(eyes.position, enemyStats.areaSphereOverlapRadius);
         }
     }
 

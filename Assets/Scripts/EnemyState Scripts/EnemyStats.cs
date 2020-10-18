@@ -9,6 +9,7 @@ public class EnemyStats
     public float moveSpeed = 5;
     public float lookRange = 5;
     public float lookSphereCastRadius = 2;
+    public float areaSphereOverlapRadius = 2;
     public float attackRange = 2;
     public float attackRate = 2;
     public float attackForce = 2;

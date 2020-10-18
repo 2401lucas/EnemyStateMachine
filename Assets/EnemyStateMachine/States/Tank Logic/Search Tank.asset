@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04e44a13c5ab994abc295b76ae411d4, type: 3}
+  m_Name: Search Tank
+  m_EditorClassIdentifier: 
+  actions: []
+  transitions:
+  - decision: {fileID: 11400000, guid: c2e05efe399386e41ab005385d9e3573, type: 2}
+    trueState: {fileID: 11400000, guid: 25d08b8b25fc4f04fabac5591cc95abe, type: 2}
+    falseState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
+  sceneGizmoColor: {r: 0.05271244, g: 0, b: 1, a: 1}

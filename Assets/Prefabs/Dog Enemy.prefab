@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5513614662641165203}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5513614662641165202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.68, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5513614662978614900}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5513614662978614896}
   - component: {fileID: 1040972360626177908}
   - component: {fileID: 5513614663339942757}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Dog Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1f578b530592e474a9f99e3ef6c8b3e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184,20 +184,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: e199216f44f358a43ada3dd639bcc5ff, type: 2}
+  remainState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
   enemyStats:
     moveSpeed: 5
-    lookRange: 10
-    lookSphereCastRadius: 5
+    lookRange: 11
+    lookSphereCastRadius: 1
+    areaSphereOverlapRadius: 10
     attackRange: 2
     attackRate: 2
     attackForce: 2
     attackDamage: 2
-    searchDuration: 4
+    searchDuration: 3
     searchingTurnSpeed: 120
-  remainState: {fileID: 11400000, guid: b07c6d472f103164aab5393ec2898133, type: 2}
   eyes: {fileID: 5513614662641165203}
   navMeshAgent: {fileID: 0}
-  wayPointList: []
-  nextWayPoint: 0
+  patrolPointList: []
+  nextPatrolPoint: 0
   chaseTarget: {fileID: 0}
   stateTimeElapsed: 0
