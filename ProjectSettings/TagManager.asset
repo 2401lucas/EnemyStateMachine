@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - PatrolPoint
+  - EnemyResetPosition
   layers:
   - Default
   - TransparentFX

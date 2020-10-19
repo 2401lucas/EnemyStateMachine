@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     private Vector3 startPos;
 
+    //Enemy
+    [HideInInspector] public Transform enemyResetTransform;
+
     #region Singleton
     //Singleton Instantiation
     public static GameManager Instance { get; private set; }
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        enemyResetTransform = GameObject.FindGameObjectWithTag("EnemyResetPosition").transform;
     }
 
     // Update is called once per frame
